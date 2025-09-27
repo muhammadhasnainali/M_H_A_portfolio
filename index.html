@@ -8,6 +8,10 @@
     <meta name="description" content="" />
     <!-- SITE TITLE -->
     <title>M H A</title>
+     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -153,30 +157,12 @@ https://templatemo.com/tm-464-ultra-profile
             <!-- START ISO SECTION -->
             <div class="iso-section">
               <ul class="filter-wrapper clearfix">
-                <li>
-                  <a href="#" class="opc-main-bg selected" data-filter="*"
-                    >All</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="opc-main-bg" data-filter=".html">HTML</a>
-                </li>
-                <li>
-                  <a href="#" class="opc-main-bg" data-filter=".photoshop"
-                    >Photoshop</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="opc-main-bg" data-filter=".wordpress"
-                    >Wordpress</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="opc-main-bg" data-filter=".mobile"
-                    >Mobile</a
-                  >
-                </li>
-              </ul>
+							<li><a href="#" class="opc-main-bg selected" data-filter="*">All</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".html">HTML</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".wordpress">Wordpress</a></li>
+							<li><a href="#" class="opc-main-bg" data-filter=".mobile">Mobile</a></li>
+						</ul>
               <div class="iso-box html photoshop wordpress mobile col-md-3 col-sm-3 col-xs-12">
   <div class="portfolio-thumb">
     <a href="https://natourse-is-for-use.netlify.app/" target="_blank">
@@ -500,57 +486,75 @@ https://templatemo.com/tm-464-ultra-profile
 
     <!-- START CONTACT -->
     <section id="contact" class="tm-contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="title">Drop <strong>me a line</strong></h2>
-            <hr />
-          </div>
-          <div class="col-md-1 col-sm-1"></div>
-          <div class="col-md-10 col-sm-10">
-            <form action="#" method="post">
-              <div class="col-md-6 col-sm-6">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div class="col-md-6 col-sm-6">
-                <input
-                  class="form-control"
-                  type="email"
-                  placeholder="Your Email"
-                />
-              </div>
-              <div class="col-md-12 col-sm-12">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Your Subject"
-                />
-                <textarea
-                  class="form-control"
-                  placeholder="Your Message"
-                  rows="6"
-                ></textarea>
-              </div>
-              <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
-                <input
-                  class="form-control"
-                  type="submit"
-                  value="SHOOT MESSAGE"
-                />
-              </div>
-            </form>
-          </div>
-          <div class="col-md-1 col-sm-1"></div>
-          <div class="col-md-12 col-sm-12">
-            <p>Copyright &copy; 2025 M H A</p>
-          </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="title">Drop <strong>me a line</strong></h2>
+        <hr />
       </div>
-    </section>
+      <div class="col-md-1 col-sm-1"></div>
+      <div class="col-md-10 col-sm-10">
+
+        <!-- Netlify-enabled form -->
+        <form name="contact" method="POST" data-netlify="true">
+          <!-- hidden input for Netlify -->
+          <input type="hidden" name="form-name" value="contact" />
+
+          <div class="col-md-6 col-sm-6">
+            <input
+              class="form-control"
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+          </div>
+
+          <div class="col-md-6 col-sm-6">
+            <input
+              class="form-control"
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+
+          <div class="col-md-12 col-sm-12">
+            <input
+              class="form-control"
+              type="text"
+              name="subject"
+              placeholder="Your Subject"
+            />
+            <textarea
+              class="form-control"
+              name="message"
+              placeholder="Your Message"
+              rows="6"
+              required
+            ></textarea>
+          </div>
+
+          <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+            <input
+              class="form-control"
+              type="submit"
+              value="SHOOT MESSAGE"
+            />
+          </div>
+        </form>
+        <!-- end form -->
+
+      </div>
+      <div class="col-md-1 col-sm-1"></div>
+      <div class="col-md-12 col-sm-12">
+        <p>Copyright &copy; 2025 M H A</p>
+      </div>
+    </div>
+  </div>
+</section>
+
     <!-- END CONTACT -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
