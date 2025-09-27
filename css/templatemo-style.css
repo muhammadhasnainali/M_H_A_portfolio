@@ -418,7 +418,7 @@ hr {
 }
 .form-control {
   background: transparent;
-  border: 1px solid #666;
+  border: 1px solid #666666;
   border-radius: 2px;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -428,7 +428,7 @@ hr {
 }
 .form-control:focus,
 .form-control:hover {
-  background: #202020;
+  background: #326f8e;
   color: #ffffff;
 }
 input {
