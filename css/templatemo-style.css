@@ -10,7 +10,7 @@ body {
   background: #ffffff;
   font-family: "Raleway", sans-serif;
   font-size: 16px;
-  color: #606060;
+  color: #4d68ab;
   position: relative;
 }
 html,
@@ -65,17 +65,17 @@ hr {
   letter-spacing: 1px;
 }
 .navbar-default .navbar-nav li a:hover {
-  color: #eb5424;
+  color: #4d68ab;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #eb5424;
+  color: #4d68ab;
   background-color: transparent;
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #eb5424;
+  color: #4d68ab;
   background-color: transparent;
 }
 .navbar-default .navbar-toggle {
@@ -83,7 +83,7 @@ hr {
   padding-top: 10px;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background: #eb5424;
+  background: #4d68ab;
   border-color: transparent;
 }
 .navbar-default .navbar-toggle:hover,
@@ -118,13 +118,13 @@ hr {
   font-size: 60px;
 }
 .tm-home-subtitle {
-  color: #eb5424;
+  color: #4d68ab;
   font-weight: bold;
   padding-bottom: 40px;
   letter-spacing: 2px;
 }
 .tm-view-more-btn {
-  background: #eb5424;
+  background: #4d68ab;
   color: #ffffff;
   border: none;
   border-radius: 2px;
@@ -137,7 +137,7 @@ hr {
 }
 .tm-view-more-btn:hover {
   background: #ffffff;
-  color: #eb5424;
+  color: #4d68ab;
 }
 /* END HOME */
 
@@ -147,7 +147,7 @@ hr {
   padding-bottom: 100px;
 }
 .tm-work-h3 {
-  color: #eb5424;
+  color: #4d68ab;
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 1px;
@@ -162,7 +162,7 @@ hr {
   transition: all 0.6s ease-in;
 }
 .work-wrapper:hover {
-  border-color: #eb5424;
+  border-color: #4d68ab;
 }
 .work-wrapper .fa {
   color: #888888;
@@ -214,7 +214,7 @@ hr {
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background: #eb5424;
+  background: #4d68ab;
   color: #ffffff;
   top: 0;
   right: 0;
@@ -274,7 +274,7 @@ hr {
 .filter-wrapper li a:focus,
 .filter-wrapper li a:hover,
 .filter-wrapper li a.selected {
-  background: #eb5424;
+  background: #4d68ab;
   border-color: transparent;
   color: #ffffff;
 }
@@ -317,7 +317,7 @@ hr {
 
 /* START RESUME */
 .tm-red-text {
-  color: #eb5424;
+  color: #4d68ab;
 }
 .tm-info-label {
   font-weight: bold;
@@ -330,7 +330,7 @@ hr {
   height: 4px;
 }
 .progress-bar-danger {
-  background: #eb5424;
+  background: #4d68ab;
 }
 .tm-progress-label {
   font-size: 12px;
@@ -372,7 +372,7 @@ hr {
 .facebook:hover,
 .twitter:hover,
 .pinterest:hover {
-  background: #202020;
+  background: #326f8e;
 }
 .facebook {
   background: #3b5998;
