@@ -13,6 +13,23 @@ body {
   color: #4d68ab;
   position: relative;
 }
+body {
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 15px;
+  }
+}
+
+@media (min-width: 1200px) {
+  body {
+    padding: 30px;
+  }
+}
+
 html,
 body {
   width: 100%;
@@ -56,6 +73,21 @@ hr {
   font-size: 30px;
   line-height: 45px;
   padding: 10px 0 0 12px;
+}
+.navbar-logo {
+  height: auto;
+  width: 10vw; /* logo will be 10% of viewport width */
+  max-width: 50px; /* don’t let it get bigger than 50px */
+  min-width: 30px; /* don’t let it get smaller than 30px */
+  border-radius: 50%;
+  transition: width 0.3s ease;
+}
+/* Fix logo between 400px–700px screens */
+@media screen and (min-width: 400px) and (max-width: 767px) {
+  .navbar-logo {
+    width: 35px; /* force a safe size */
+    height: auto;
+  }
 }
 .navbar-default .navbar-nav li a {
   color: #202020;
@@ -114,15 +146,39 @@ hr {
 .tm-home-subtitle {
   text-transform: uppercase;
 }
-.tm-home-title {
-  font-size: 60px;
+.templatemo-home {
+  padding: 100px 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.tm-home-title {
+  font-size: clamp(24px, 6vw, 60px);
+  line-height: 1.2;
+  text-align: center;
+  margin: 10px 0;
+  color: #ffffff;
+}
+
 .tm-home-subtitle {
   color: #4d68ab;
   font-weight: bold;
   padding-bottom: 40px;
   letter-spacing: 2px;
 }
+/* Hero paragraph */
+.templatemo-home p {
+  font-size: clamp(14px, 2.8vw, 18px);
+  color: #4d68ab;
+  max-width: 800px; /* keeps text from being too wide on large screens */
+  margin: 0 auto 25px auto;
+  line-height: 1.6;
+  text-align: center;
+  word-wrap: break-word; /* prevents overflow on long words */
+}
+
 .tm-view-more-btn {
   background: #4d68ab;
   color: #ffffff;
@@ -135,6 +191,21 @@ hr {
   -webkit-transition: all 0.6s ease-in;
   transition: all 0.6s ease-in;
 }
+/* Hero button */
+.tm-view-more-btn {
+  font-size: clamp(12px, 2.5vw, 18px); /* responsive text */
+  padding: 10px 25px; /* button size */
+  border-radius: 6px; /* smoother look */
+  margin-top: 20px;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap; /* prevents text wrapping */
+  max-width: 90%; /* avoids overflow on tiny screens */
+}
+.templatemo-home {
+  text-align: center;
+}
+
 .tm-view-more-btn:hover {
   background: #ffffff;
   color: #4d68ab;
@@ -279,7 +350,30 @@ hr {
   color: #ffffff;
 }
 
+/* Add spacing between skill boxes */
+.work-wrapper {
+  margin-bottom: 20px;
+}
+
+/* Extra breathing room on very small screens */
+@media (max-width: 600px) {
+  .work-wrapper {
+    margin-bottom: 30px;
+  }
+}
+/* Default state */
+.work-wrapper {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover state */
+.work-wrapper:hover {
+  transform: translateY(-8px); /* moves box up */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* adds shadow */
+}
+
 /* ISOTOPE BOX CSS */
+
 .iso-box-section {
   width: 100%;
 }
@@ -354,6 +448,55 @@ hr {
   padding-top: 60px;
   padding-bottom: 100px;
 }
+
+.title {
+  color: #4d68ab; /* pick any color you like */
+}
+
+.about-box {
+  background: rgba(255, 255, 255, 0.1); /* transparent */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 30px; /* more breathing space */
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 95%; /* make box wider */
+}
+
+/* Popup effect */
+.about-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Make text smaller but clean */
+.about-box h2 {
+  font-size: 22px;
+}
+
+.about-box h1 {
+  font-size: 28px;
+}
+
+.about-box li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4d68ab; /* readable on glass background */
+}
+.about-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%; /* full width inside column */
+}
+
 /* END ABOUT */
 
 /* START SOCIAL */
@@ -389,14 +532,14 @@ hr {
   transition: all 0.6s ease-in;
 }
 .tm-social a {
-  color: #ffffff;
+  color: #4d68ab;
   display: inline-block;
   text-decoration: none;
 }
 .tm-social .media .fa {
-  background: #ffffff;
+  background: #c2cbe3;
   border-radius: 2px;
-  color: #707070;
+  color: #170606;
   font-size: 30px;
   width: 60px;
   height: 60px;
@@ -418,7 +561,7 @@ hr {
 }
 .form-control {
   background: transparent;
-  border: 1px solid #666666;
+  border: 1px solid #4d68ab;
   border-radius: 2px;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -466,3 +609,321 @@ input {
   }
 }
 /* END MEDIA 360 */
+@media screen and (max-width: 600px) {
+  .templatemo-home {
+    padding: 50px 15px; /* reduce top/bottom padding */
+  }
+  .tm-home-title {
+    font-size: 28px !important;
+    line-height: 1.2;
+    margin: 10px 0; /* prevent it from sticking to edges */
+    text-align: center;
+  }
+  .tm-home-subtitle {
+    font-size: 16px;
+  }
+}
+/* Project box hover effect */
+.iso-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.iso-box:hover {
+  transform: translateY(-8px); /* moves the box up */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* soft shadow */
+}
+/* Project box default state */
+.iso-box {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle default shadow */
+  border-radius: 6px; /* optional, smoother edges */
+}
+
+/* Hover state */
+.iso-box:hover {
+  transform: translateY(-8px); /* lift up */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* stronger shadow when popped */
+}
+/* Resume Box Styling */
+.resume-box {
+  background: #ffffff; /* clean white background */
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* soft default shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 1000px; /* keeps it from being too wide */
+  margin: 40px auto; /* center with space around */
+}
+
+/* Pop-up effect on hover */
+.resume-box:hover {
+  transform: translateY(-8px); /* lift up */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); /* stronger shadow */
+}
+/* Resume Box Styling */
+.resume-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  width: 100%; /* take full width of parent */
+  max-width: 1200px; /* wide enough for both columns */
+  margin: 40px auto; /* center horizontally with spacing */
+  box-sizing: border-box; /* ensures padding doesn’t break layout */
+}
+
+/* Pop-up effect on hover */
+.resume-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+/* Contact Box Styling */
+.contact-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  box-sizing: border-box;
+}
+
+/* Base style for social media boxes */
+.tm-social .media {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect (pop up + shadow) */
+.tm-social .media:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: platform colors */
+.tm-social .facebook:hover {
+  background: #1877f2; /* Facebook blue */
+  color: #fff;
+}
+.tm-social .twitter:hover {
+  background: #e1306c; /* Instagram pink */
+  color: #fff;
+}
+.tm-social .pinterest:hover {
+  background: #000; /* GitHub black */
+  color: #fff;
+}
+
+/* Make sure text/icons change color on hover */
+.tm-social .media:hover i,
+.tm-social .media:hover h3,
+.tm-social .media:hover h4 {
+  color: #fff;
+}
+.btn-begin {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-begin:hover {
+  transform: translateY(-8px); /* moves up */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* adds shadow */
+}
+.btn-begin {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
+  background: linear-gradient(45deg, #4d68ab, #a7adbc);
+  color: #fff;
+  border: none;
+}
+
+.btn-begin:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 25px #4d68ab;
+  background: linear-gradient(45deg, #a6a9b0, #d4dae9); /* reverses gradient */
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 4;
+    transform: translateY(0);
+  }
+}
+
+.btn-begin {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-begin::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+.btn-begin:active::after {
+  transform: translate(-50%, -50%) scale(3);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Navbar button popup */
+.navbar-nav li a {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+}
+
+.navbar-nav li a:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.skill-box {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  /* for popup hover effect */
+  transform: translateY(0);
+}
+
+.skill-box.left {
+  transform: translateX(-100px);
+}
+
+.skill-box.right {
+  transform: translateX(100px);
+}
+
+.skill-box.middle {
+  transform: translateY(50px);
+}
+
+.skill-box.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+.project-box {
+  opacity: 0;
+  transform: translate(0, 0);
+  transition: all 0.8s ease-out;
+}
+
+/* Initial off-screen positions */
+.project-box.from-left {
+  transform: translateX(-200px);
+}
+.project-box.from-right {
+  transform: translateX(200px);
+}
+.project-box.from-top-left {
+  transform: translate(-150px, -150px);
+}
+.project-box.from-top-right {
+  transform: translate(150px, -150px);
+}
+.project-box.from-bottom-left {
+  transform: translate(-150px, 150px);
+}
+.project-box.from-bottom-right {
+  transform: translate(150px, 150px);
+}
+
+/* When visible */
+.project-box.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Initial off-screen positions */
+.animate-left {
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: all 0.8s ease-out;
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(200px);
+  transition: all 0.8s ease-out;
+}
+
+/* When visible */
+.animate-left.visible,
+.animate-right.visible {
+  opacity: 4;
+  transform: translateX(0);
+}
+
+/* Initial off-screen position (from left) */
+.animate-about {
+  opacity: 0;
+  transform: translateX(-200px); /* comes from left */
+  transition: all 0.8s ease-out;
+}
+
+/* When visible */
+.animate-about.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-about li {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.5s ease-out;
+}
+
+.animate-about.visible li:nth-child(1) {
+  transition-delay: 0.2s;
+}
+.animate-about.visible li:nth-child(2) {
+  transition-delay: 0.4s;
+}
+.animate-about.visible li:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.animate-about.visible li:nth-child(4) {
+  transition-delay: 0.6s;
+}
+.animate-about.visible li:nth-child(5) {
+  transition-delay: 0.6s;
+}
+.animate-about.visible li:nth-child(6) {
+  transition-delay: 0.6s;
+}
+/* Continue for all list items */
+.animate-about.visible li {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.skill-box:hover,
+.iso-box:hover,
+.btn:hover {
+  box-shadow: 0 15px 25px #4d68ab;
+  transform: translateY(-5px);
+}
+
+.tm-home-subtitle {
+  overflow: visible; /* make sure text can expand */
+}
