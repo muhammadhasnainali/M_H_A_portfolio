@@ -44,7 +44,7 @@ p {
   line-height: 28px;
 }
 hr {
-  border-color: #f2f2f2;
+  border-color: #4d68ab;
   width: 100px;
   margin-bottom: 40px;
 }
@@ -60,7 +60,7 @@ hr {
   opacity: 0;
 }
 .navbar-default {
-  background: #fff;
+  background: #f8f8f8;
   border: none;
   -webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
   box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
@@ -159,7 +159,7 @@ hr {
   line-height: 1.2;
   text-align: center;
   margin: 10px 0;
-  color: #ffffff;
+  color: #ffff;
 }
 
 .tm-home-subtitle {
@@ -181,7 +181,7 @@ hr {
 
 .tm-view-more-btn {
   background: #4d68ab;
-  color: #ffffff;
+  color: #f8f8f8;
   border: none;
   border-radius: 2px;
   font-size: 20px;
@@ -207,7 +207,7 @@ hr {
 }
 
 .tm-view-more-btn:hover {
-  background: #ffffff;
+  background: #f8f8f8;
   color: #4d68ab;
 }
 /* END HOME */
@@ -286,7 +286,7 @@ hr {
   -ms-flex-pack: center;
   justify-content: center;
   background: #4d68ab;
-  color: #ffffff;
+  color: #f8f8f8;
   top: 0;
   right: 0;
   left: 0;
@@ -347,7 +347,7 @@ hr {
 .filter-wrapper li a.selected {
   background: #4d68ab;
   border-color: transparent;
-  color: #ffffff;
+  color: #f8f8f8;
 }
 
 /* Add spacing between skill boxes */
@@ -572,7 +572,7 @@ hr {
 .form-control:focus,
 .form-control:hover {
   background: #326f8e;
-  color: #ffffff;
+  color: #f8f8f8;
 }
 input {
   height: 50px;
@@ -646,7 +646,7 @@ input {
 }
 /* Resume Box Styling */
 .resume-box {
-  background: #ffffff; /* clean white background */
+  background: #f8f8f8; /* clean white background */
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* soft default shadow */
@@ -662,7 +662,7 @@ input {
 }
 /* Resume Box Styling */
 .resume-box {
-  background: #ffffff;
+  background: #f8f8f8;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -681,7 +681,7 @@ input {
 }
 /* Contact Box Styling */
 .contact-box {
-  background: #ffffff;
+  background: #f8f8f8;
   padding: 40px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -695,7 +695,7 @@ input {
 
 /* Base style for social media boxes */
 .tm-social .media {
-  background: #fff;
+  background: #f8f8f8;
   padding: 15px;
   border-radius: 12px;
   text-align: left;
@@ -712,22 +712,22 @@ input {
 /* Optional: platform colors */
 .tm-social .facebook:hover {
   background: #1877f2; /* Facebook blue */
-  color: #fff;
+  color: #f8f8f8;
 }
 .tm-social .twitter:hover {
   background: #e1306c; /* Instagram pink */
-  color: #fff;
+  color: #f8f8f8;
 }
 .tm-social .pinterest:hover {
   background: #000; /* GitHub black */
-  color: #fff;
+  color: #f8f8f8;
 }
 
 /* Make sure text/icons change color on hover */
 .tm-social .media:hover i,
 .tm-social .media:hover h3,
 .tm-social .media:hover h4 {
-  color: #fff;
+  color: #f8f8f8;
 }
 .btn-begin {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -740,7 +740,7 @@ input {
 .btn-begin {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease;
   background: linear-gradient(45deg, #4d68ab, #a7adbc);
-  color: #fff;
+  color: #f8f8f8;
   border: none;
 }
 
