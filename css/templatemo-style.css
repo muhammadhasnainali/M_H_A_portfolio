@@ -927,3 +927,384 @@ input {
 .tm-home-subtitle {
   overflow: visible; /* make sure text can expand */
 }
+
+/* Toggle Button Style */
+.dark-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+.dark-toggle:hover {
+  transform: scale(1.2);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #fff;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Keep all main boxes original (override text color inside them) */
+.skill-box,
+.resume-box,
+.about-box,
+.contact-box,
+.portfolio-box {
+  color: inherit; /* use their default */
+  background: inherit; /* don't override */
+}
+
+/* Hero section */
+#home {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Dark mode overlay */
+body.dark-mode #home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black overlay */
+  pointer-events: none; /* text remains clickable */
+  z-index: 1;
+}
+
+/* Make sure hero text is above overlay */
+body.dark-mode #home .tm-home-title,
+body.dark-mode #home .tm-home-subtitle,
+body.dark-mode #home p,
+body.dark-mode #home .tm-view-more-btn {
+  position: relative;
+  z-index: 2; /* above overlay */
+  color: #ffffff; /* keep text bright */
+}
+
+/* Skill boxes dim in dark mode */
+body.dark-mode .skill-box {
+  position: relative;
+  background-color: #000000; /* dim the box background */
+  color: #ffffff; /* bright text */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Keep skill-box inner elements bright */
+body.dark-mode .skill-box h3,
+body.dark-mode .skill-box p,
+body.dark-mode .skill-box i {
+  color: #fff; /* icon and text bright */
+  z-index: 2;
+  position: relative;
+}
+
+/* Optional: add overlay instead of changing background-color */
+body.dark-mode .skill-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4d68ab; /* semi-transparent dim layer */
+  z-index: 1;
+  border-radius: 8px; /* match skill box rounded corners */
+}
+
+/* Ensure text/icons stay above overlay */
+body.dark-mode .skill-box * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Portfolio section background & text */
+body.dark-mode .tm-portfolio {
+  background: #121212; /* dark background */
+  color: #ffffff; /* bright text for titles */
+}
+
+/* Portfolio titles bright */
+body.dark-mode .tm-portfolio-title,
+body.dark-mode .portfolio-item-title {
+  color: #ffffff; /* bright titles */
+}
+
+/* Dim portfolio images */
+body.dark-mode .portfolio-thumb img,
+body.dark-mode .iso-box img,
+body.dark-mode .fluid-img {
+  filter: brightness(0.5) contrast(0.9); /* dim images */
+  transition: filter 0.3s ease;
+}
+
+/* Keep overlay bright */
+body.dark-mode .portfolio-overlay {
+  background: rgba(77, 104, 171, 0.8); /* slightly transparent blue overlay */
+  color: #ffffff; /* bright text */
+}
+
+/* Overlay icons bright */
+body.dark-mode .portfolio-overlay .fa {
+  color: #ffffff; /* bright icons */
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Hover effect in dark mode */
+body.dark-mode .portfolio-thumb:hover img,
+body.dark-mode .iso-box:hover img,
+body.dark-mode .fluid-img:hover {
+  filter: brightness(0.7) contrast(1); /* slightly brighter on hover */
+}
+
+/* About Me section dark mode */
+body.dark-mode .tm-about {
+  background: url("../images/about-bg.png");
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  position: relative;
+  color: #ffffff; /* bright text */
+}
+
+/* Add a dim overlay on top of the background image */
+body.dark-mode .tm-about::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* dims the background */
+  z-index: 1;
+}
+
+/* Make sure the content is above the overlay */
+body.dark-mode .tm-about > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* About Me boxes dark mode */
+body.dark-mode .about-box {
+  background: rgba(0, 0, 0, 0.5); /* dimmed box background */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* subtle border */
+  color: #ffffff; /* bright text */
+}
+
+/* Optional: hover effect in dark mode */
+body.dark-mode .about-box:hover {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Make all text inside bright white */
+body.dark-mode .about-box h1,
+body.dark-mode .about-box h2,
+body.dark-mode .about-box p,
+body.dark-mode .about-box li {
+  color: #ffffff !important;
+}
+
+/* Dark mode social media buttons */
+body.dark-mode .tm-social .media {
+  background: rgba(0, 0, 0, 0.5); /* dim background */
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.1); /* subtle shadow */
+  color: #ffffff; /* make text/icon bright */
+}
+
+/* Brighten icons and text inside buttons */
+body.dark-mode .tm-social .media i,
+body.dark-mode .tm-social .media h3,
+body.dark-mode .tm-social .media h4 {
+  color: #ffffff !important;
+}
+
+/* Optional hover effect in dark mode */
+body.dark-mode .tm-social .media:hover {
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+/* Dark mode navbar */
+body.dark-mode .navbar-default {
+  background: rgba(0, 0, 0, 0.8); /* dim background */
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1); /* subtle highlight */
+  border: none; /* optional: remove border in dark mode */
+}
+
+/* Navbar brand & links text */
+body.dark-mode .navbar-default .navbar-brand,
+body.dark-mode .navbar-default .navbar-nav li a {
+  color: #ffffff; /* bright white text */
+}
+
+/* Navbar links hover */
+body.dark-mode .navbar-default .navbar-nav li a:hover,
+body.dark-mode .navbar-default .navbar-nav > .active > a,
+body.dark-mode .navbar-default .navbar-nav > .active > a:hover,
+body.dark-mode .navbar-default .navbar-nav > .active > a:focus {
+  color: #ffd700; /* optional: bright accent on hover or active */
+}
+
+/* Navbar toggle button (mobile) */
+body.dark-mode .navbar-default .navbar-toggle .icon-bar {
+  background: #ffffff; /* white bars for visibility */
+}
+
+body,
+.hero,
+.skill-box,
+.portfolio-item,
+.about-box,
+.tm-social .media,
+.navbar-default {
+  transition: background 0.5s ease, color 0.5s ease, box-shadow 0.5s ease,
+    filter 0.5s ease;
+}
+
+body.dark-mode .btn-begin:hover,
+body.dark-mode .skill-box:hover {
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.4);
+  transform: translateY(-5px) scale(1.02);
+}
+
+body.dark-mode .templatemo-home {
+  position: relative; /* make ::before relative to hero */
+  overflow: hidden; /* prevents gradient from spilling */
+  z-index: 1; /* ensure content stays above */
+}
+
+body.dark-mode .templatemo-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(80, 80, 80, 0.2),
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: -1; /* behind hero content */
+  pointer-events: none; /* allows clicks through overlay */
+  animation: gradientShift 20s infinite alternate;
+}
+
+/* subtle animation */
+@keyframes gradientShift {
+  0% {
+    background-position: center;
+  }
+  50% {
+    background-position: top left;
+  }
+  100% {
+    background-position: center;
+  }
+}
+
+body.fun-mode * {
+  transition: none !important; /* override smooth transitions */
+}
+
+/* Text crack/glitch */
+.fun-mode h1,
+.fun-mode h2,
+.fun-mode p {
+  animation: shake 0.5s infinite alternate;
+  color: #ff00ff; /* wild colors */
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  50% {
+    transform: translate(5px, -5px) rotate(5deg);
+  }
+  75% {
+    transform: translate(-5px, 5px) rotate(-3deg);
+  }
+  100% {
+    transform: translate(5px, -5px) rotate(3deg);
+  }
+}
+
+/* Sections tilt randomly */
+.fun-mode section {
+  animation: tilt 3s infinite alternate ease-in-out;
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+  75% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(-3deg);
+  }
+}
+
+/* Ensure hero section text is always visible */
+.fun-mode .templatemo-home {
+  position: relative;
+  overflow: visible; /* allow text to move outside if needed */
+  z-index: 1; /* base layer */
+}
+
+/* Overlay / fun effects go below text */
+.fun-mode .templatemo-home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  z-index: 1; /* below text */
+  pointer-events: none;
+}
+
+/* Bring text above everything */
+.fun-mode .tm-home-title,
+.fun-mode .tm-home-subtitle {
+  position: relative;
+  z-index: 2; /* above overlay */
+  color: #ffffff !important; /* always visible */
+}
+
+/* Optional: prevent crazy transforms from hiding text */
+.fun-mode .tm-home-title,
+.fun-mode .tm-home-subtitle {
+  transform: none !important;
+  clip-path: none !important;
+  opacity: 1 !important;
+}
+
+.fun-char {
+  font-size: 60px;
+  font-weight: bold;
+  color: red;
+  pointer-events: none;
+  user-select: none;
+}

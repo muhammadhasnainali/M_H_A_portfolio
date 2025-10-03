@@ -66,6 +66,12 @@ https://templatemo.com/tm-464-ultra-profile
             <li><a href="#about" class="smoothScroll">About</a></li>
             <li><a href="#contact" class="smoothScroll">Contact</a></li>
           </ul>
+<li>
+  <button id="darkModeToggle" class="dark-toggle">🌙</button>
+</li>
+
+<button id="funButton">Fun Mode</button>
+
         </nav>
       </div>
     </div>
@@ -567,5 +573,129 @@ https://templatemo.com/tm-464-ultra-profile
     <script src="js/isotope.js"></script>
     <script src="js/imagesloaded.min.js"></script>
     <script src="js/custom.js"></script>
+
+
+
+
+
+
+<script>
+const funButton = document.querySelector("#funButton");
+
+let funActive = false; // track current mode
+let letters = [];
+let allSections = [];
+let originalStates = [];
+
+funButton.addEventListener("click", () => {
+  if (!funActive) {
+    funActive = true;
+    document.body.classList.add("fun-mode");
+    startFunMode();
+  } else {
+    funActive = false;
+    reverseFunMode();
+  }
+});
+
+function startFunMode() {
+  const heroTitle = document.querySelector(".tm-home-title");
+  allSections = Array.from(document.querySelectorAll("section, h1, h2, h3, p, div"));
+
+  // Save original positions and transforms
+  originalStates = allSections.map(section => ({
+    el: section,
+    transform: section.style.transform || "",
+    transition: section.style.transition || ""
+  }));
+
+  // Split hero title into letters
+  letters = heroTitle.textContent.split("").map((char, i) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.className = "fun-char";
+    document.body.appendChild(span);
+
+    const rect = heroTitle.getBoundingClientRect();
+    span.style.position = "absolute";
+    span.style.left = rect.left + i * 15 + "px"; 
+    span.style.top = rect.top + "px";
+
+    // physics
+    span.vx = (Math.random() - 0.5) * 2;
+    span.vy = 0;
+    span.gravity = 0.2 + Math.random() * 0.2; 
+    span.friction = 0.98;
+
+    // save original
+    span.original = { left: span.style.left, top: span.style.top };
+
+    return span;
+  });
+
+  heroTitle.style.visibility = "hidden";
+
+  function animate() {
+    if (!funActive) return; // stop animation if reversing
+    letters.forEach(letter => {
+      letter.vy += letter.gravity;
+      letter.style.top = parseFloat(letter.style.top) + letter.vy + "px";
+      letter.style.left = parseFloat(letter.style.left) + letter.vx + "px";
+      letter.vx *= letter.friction;
+      letter.vy *= letter.friction;
+
+      allSections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const letterRect = letter.getBoundingClientRect();
+        if (
+          letterRect.bottom > rect.top &&
+          letterRect.top < rect.bottom &&
+          letterRect.right > rect.left &&
+          letterRect.left < rect.right
+        ) {
+          const offsetX = (Math.random() - 0.5) * 10;
+          const offsetY = (Math.random() - 0.5) * 10;
+          const rotate = (Math.random() - 0.5) * 15;
+          const scale = 1 - Math.random() * 0.1;
+          section.style.transform = `translate(${offsetX}px, ${offsetY}px) rotate(${rotate}deg) scale(${scale})`;
+          section.style.transition = "transform 0.5s ease-out";
+        }
+      });
+    });
+
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+}
+
+function reverseFunMode() {
+  // Restore hero title
+  const heroTitle = document.querySelector(".tm-home-title");
+  heroTitle.style.visibility = "visible";
+
+  // Remove letters gradually
+  letters.forEach(letter => letter.remove());
+  letters = [];
+
+  // Restore original sections
+  originalStates.forEach(state => {
+    state.el.style.transition = "transform 1s ease-out";
+    state.el.style.transform = state.transform;
+  });
+
+  document.body.classList.remove("fun-mode");
+}
+</script>
+
+
+
+
+
+
+
+    
+
+
   </body>
 </html>
