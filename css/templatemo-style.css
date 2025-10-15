@@ -1211,100 +1211,53 @@ body.dark-mode .templatemo-home::before {
     background-position: center;
   }
 }
-
-body.fun-mode * {
-  transition: none !important; /* override smooth transitions */
+.tm-name-text {
+  color: #4d68ab; /* Blue shade */
+  transition: color 0.3s ease;
 }
 
-/* Text crack/glitch */
-.fun-mode h1,
-.fun-mode h2,
-.fun-mode p {
-  animation: shake 0.5s infinite alternate;
-  color: #ff00ff; /* wild colors */
-}
-
-@keyframes shake {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-  }
-  25% {
-    transform: translate(-5px, 5px) rotate(-5deg);
-  }
-  50% {
-    transform: translate(5px, -5px) rotate(5deg);
-  }
-  75% {
-    transform: translate(-5px, 5px) rotate(-3deg);
-  }
-  100% {
-    transform: translate(5px, -5px) rotate(3deg);
+/* On mobile screens: force name to white */
+@media (max-width: 768px) {
+  .tm-name-text {
+    color: #ffffff !important;
   }
 }
 
-/* Sections tilt randomly */
-.fun-mode section {
-  animation: tilt 3s infinite alternate ease-in-out;
+.about-blur-box {
+  background: #4d68ab53; /* Darker transparent background */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  padding: 5px;
+  margin-top: 15px;
+  color: #fff; /* Makes text inside white */
+  transition: all 0.3s ease;
 }
 
-@keyframes tilt {
-  0% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(2deg);
-  }
-  50% {
-    transform: rotate(-2deg);
-  }
-  75% {
-    transform: rotate(3deg);
-  }
-  100% {
-    transform: rotate(-3deg);
-  }
+/* For dark mode, make it a bit lighter so contrast remains good */
+body.dark-mode .about-blur-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
-/* Ensure hero section text is always visible */
-.fun-mode .templatemo-home {
-  position: relative;
-  overflow: visible; /* allow text to move outside if needed */
-  z-index: 1; /* base layer */
+/* === Contact Form Hover Effect === */
+.form-control:hover,
+.form-control:focus {
+  background-color: #455682; /* blue background on hover */
+  color: white; /* white text */
+  border: 1px solid #455682;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Overlay / fun effects go below text */
-.fun-mode .templatemo-home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
-  z-index: 1; /* below text */
-  pointer-events: none;
+/* Placeholder turns white too */
+.form-control:hover::placeholder,
+.form-control:focus::placeholder {
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* Bring text above everything */
-.fun-mode .tm-home-title,
-.fun-mode .tm-home-subtitle {
-  position: relative;
-  z-index: 2; /* above overlay */
-  color: #ffffff !important; /* always visible */
-}
-
-/* Optional: prevent crazy transforms from hiding text */
-.fun-mode .tm-home-title,
-.fun-mode .tm-home-subtitle {
-  transform: none !important;
-  clip-path: none !important;
-  opacity: 1 !important;
-}
-
-.fun-char {
-  font-size: 60px;
-  font-weight: bold;
-  color: red;
-  pointer-events: none;
-  user-select: none;
+/* Optional: soft glow for a modern look */
+.form-control:hover,
+.form-control:focus {
+  box-shadow: 0 4px 10px #455682;
 }
